@@ -66,18 +66,18 @@ defmodule Identicon do
     %Identicon.Image{image | pixel_map: pixel_map}
   end
 
-  def draw_image(%Identicon.Image{pixel_map: pixel_map,color: color}) do
+  def draw_image(%Identicon.Image{pixel_map: pixel_map, color: color}) do
     image = :egd.create(250, 250)
     fill = :egd.color(color)
 
-    Enum.each pixel_map, fn({start, stop}) ->
-      :egd.filledRectangle(image,start,stop,fill)
-    end
+    Enum.each(pixel_map, fn {start, stop} ->
+      :egd.filledRectangle(image, start, stop, fill)
+    end)
 
     :egd.render(image)
   end
 
   def save_image(image, input) do
-    File.write("#{input}.png",image)
+    File.write("#{input}.png", image)
   end
 end
