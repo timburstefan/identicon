@@ -19,3 +19,10 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/identicon>.
 
+## How to run
+
+```elixir
+iex -S mix
+Identicon.main("hello")
+```
+This will generate a png file named hello.png in the root directory of the project.
